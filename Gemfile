@@ -53,6 +53,12 @@ gem 'tzinfo-data'
 gem 'validates_formatting_of'
 gem 'debug_inspector', '~> 0.0.2'
  
+# Use postgresql for Active Record DB
+gem 'pg'
+
+#enhanced postgres data types
+gem 'postgres_ext'
+
 # image processor with image magick
 gem 'paperclip', '~> 4.0'
 
@@ -61,19 +67,15 @@ gem 'aws-sdk', '< 3.0'
 
 group :development do
   gem 'better_errors'
-  gem 'sqlite3'
 end
 
 group :production do
-# Use postgresql as the database for Active Record
-	gem 'pg'
 	gem 'rails_12factor'
 end
 
 group :development, :test do
   gem 'rspec-rails'
   gem 'factory_girl_rails'
-  gem 'sqlite3'
 end
 
 group :test do
