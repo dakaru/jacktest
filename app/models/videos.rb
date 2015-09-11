@@ -1,0 +1,4 @@
+class Videos < ActiveRecord::Base
+  belongs_to :user
+  belongs_to :favorites
+end
