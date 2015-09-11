@@ -1,2 +1,24 @@
-<h1>Landings#index</h1>
-<p>Find me in app/views/landings/index.html.erb</p>
+<div class="jumbotron center">
+	
+	<% if user_signed_in? %>
+
+		<% puts %> <h2> Welcome back <%= current_user.name %>! </h2>
+
+
+	<% else %>
+
+
+	<h1>Make some <i>Jack</i>.</h1>
+	<h2><i> (you want this) </i></h2>
+	<br>
+	
+	<h3>
+		<%= link_to "Sign In", new_user_session_path, class: "btn btn-default btn-lg" %>
+		<%= link_to "Sign Up", new_user_registration_path, class: "btn btn-primary btn-lg" %>
+	</h3>
+
+	<% end %>
+
+
+
+</div>
