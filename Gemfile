@@ -3,8 +3,7 @@ source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.4'
-# Use postgresql as the database for Active Record
-gem 'pg'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
 # Use Uglifier as compressor for JavaScript assets
@@ -39,7 +38,6 @@ gem 'spring',        group: :development
 # gem 'debugger', group: [:development, :test]
 
 gem 'bundler'
-
 gem 'devise', github: 'plataformatec/devise'
 gem 'omniauth'
 gem 'omniauth-facebook'
@@ -53,18 +51,34 @@ gem 'bootstrap-sass-extras'
 gem 'activeadmin', github: 'gregbell/active_admin'
 gem 'tzinfo-data'
 gem 'validates_formatting_of'
+gem 'debug_inspector', '~> 0.0.2'
+ 
+# image processor with image magick
+gem 'paperclip', '~> 4.0'
+
+#AWS image storage
+gem 'aws-sdk', '< 3.0'
 
 group :development do
   gem 'better_errors'
+  gem 'sqlite3'
+end
+
+group :production do
+# Use postgresql as the database for Active Record
+	gem 'pg'
+	gem 'rails_12factor'
 end
 
 group :development, :test do
   gem 'rspec-rails'
   gem 'factory_girl_rails'
+  gem 'sqlite3'
 end
 
 group :test do
   gem 'shoulda-matchers'
   gem 'cucumber-rails', require: false
   gem 'database_cleaner'
+  gem 'sqlite3'
 end

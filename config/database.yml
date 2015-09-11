@@ -23,7 +23,7 @@ default: &default
 
 development:
   <<: *default
-  database: jacktest_development
+  database: db/development.sqlite3
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -79,7 +79,10 @@ test:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
 production:
-  <<: *default
-  database: jacktest_production
-  username: jacktest
-  password: <%= ENV['JACKTEST_DATABASE_PASSWORD'] %>
+  adapter: postgresql
+  host: localhost
+  encoding: unicode
+  database: my_production_database
+  pool: 5
+  username:
+  password:
