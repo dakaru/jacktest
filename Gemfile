@@ -65,12 +65,16 @@ gem 'paperclip', '~> 4.0'
 #AWS image storage
 gem 'aws-sdk', '< 3.0'
 
+
 group :development do
   gem 'better_errors'
 end
 
 group :production do
 	gem 'rails_12factor'
+
+	#password protect development site on heroku
+	gem 'rack-wwwhisper', '~> 1.0'
 end
 
 group :development, :test do

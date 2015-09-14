@@ -83,5 +83,7 @@ Rails.application.configure do
   #->Prelang
   GA.tracker = ""
 
+config.middleware.insert 0, "Rack::WWWhisper"
+
 end
 
