@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'profile/new'
+
+  get 'profile/create'
+
   get 'landings/index'
 
   devise_for :admin_users, ActiveAdmin::Devise.config
@@ -10,10 +14,12 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'landings#index'
 
-    get "about" => 'pages#about'
-    get "contact" => 'pages#contact'
+    get "about" => 'landings#about'
+    get "contact" => 'landings#contact'
     get 'logout' => 'pages#logout'
-    get 'Pins' => 'pins#index'
+    
+
+    resources :elements
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

@@ -1,0 +1,29 @@
+<div class="jumbotron center">
+	
+	<% if user_signed_in? %>
+
+		<% puts %> <h2> Do you want to talk to us <%= current_user.username %>? </h2>
+
+	<h3>
+		<%= link_to "Yes", new_user_session_path, class: "btn btn-default btn-lg" %>
+		<%= link_to "No", new_user_registration_path, class: "btn btn-primary btn-lg" %>
+	</h3>
+
+
+	<% else %>
+
+
+	<h1>MChat with <i>Jack</i>!</h1>
+	<h2><i> (he's pretty awesome) </i></h2>
+	<br>
+	
+	<h3>
+		<%= link_to "Sign In", new_user_session_path, class: "btn btn-default btn-lg" %>
+		<%= link_to "Sign Up", new_user_registration_path, class: "btn btn-primary btn-lg" %>
+	</h3>
+
+	<% end %>
+
+
+
+</div>
