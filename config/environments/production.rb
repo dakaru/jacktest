@@ -85,5 +85,7 @@ Rails.application.configure do
 
 config.middleware.insert 0, "Rack::WWWhisper"
 
+config.omniauth :facebook, "1069173973116763", "808394b39df2cd1991eac65286434bbc"
+
 end
 
